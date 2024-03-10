@@ -1,0 +1,84 @@
+.golden-color {
+  --bs-primary: #ffd700; /* Golden color */
+}
+
+.form-control,
+.btn-primary {
+  font-family: "Playfair Display", serif !important;
+  font-style: italic;
+  display: block;
+  width: 100%;
+  padding: 0.75rem 0.75rem !important;
+  font-size: 1.2rem !important;
+  font-weight: 400;
+  line-height: 1 !important;
+  color: white !important;
+  background-color: #fff0 !important;
+  background-clip: padding-box;
+  border: 3px solid #ffffff !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 2rem !important;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  outline: none !important;
+  box-shadow: none !important;
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.562) !important;
+  }
+}
+.btn-primary:hover {
+  color: var(--bs-primary);
+  background-color: #fff;
+  border-color: var(--bs-primary);
+}
+
+#ContactUs {
+  .contact-form {
+    padding: 20px;
+    backdrop-filter: blur(30px);
+    background: rgba(253, 217, 110, 0.45);
+    border-radius: 30px;
+  }
+  .btn {
+    max-width: 200px !important;
+    width: 100% !important;
+    &:hover {
+      background: white !important;
+      color: gold !important;
+    }
+    @include respond-below(sm) {
+      max-width: 100% !important;
+    }
+  }
+  h2 {
+    font-family: "Playfair Display", serif !important;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 2.5em;
+    text-shadow: 0 2px 8px #0000009c;
+    text-transform: capitalize;
+    position: relative;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 1em;
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 2px;
+      background: wheat;
+      bottom: -10px;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+  }
+  .container {
+    height: 100%;
+  }
+  .row {
+    height: 100%;
+    align-items: center;
+  }
+}

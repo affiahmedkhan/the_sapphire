@@ -1,0 +1,77 @@
+body {
+  position: relative;
+  padding-top: calc(var(--headerHeight) + var(--headerNavTabHeight));
+  background-color: $bg_color;
+}
+$otherWidths: (600);
+
+@for $i from 1 through 100 {
+  .w-#{$i} {
+    width: $i * 1%;
+  }
+}
+@for $i from 1 through 300 {
+  .w-#{$i}px {
+    width: $i * 1px;
+  }
+  .min-w-#{$i}px {
+    min-width: $i * 1px;
+  }
+  .max-w-#{$i}px {
+    max-width: $i * 1px;
+  }
+}
+
+@each $i in $otherWidths {
+  .w-#{$i}px {
+    width: $i * 1px;
+  }
+  .max-w-#{$i}px {
+    max-width: $i * 1px;
+  }
+  .min-w-#{$i}px {
+    min-width: $i * 1px;
+  }
+}
+
+.w-auto {
+  width: auto;
+}
+
+@for $i from 0 through 100 {
+  .h-#{$i} {
+    height: $i * 1%;
+  }
+}
+
+@for $i from 0 through 300 {
+  .h-#{$i}px {
+    height: $i * 1px;
+  }
+  .min-h-#{$i}px {
+    min-height: $i * 1px;
+  }
+  .max-h-#{$i}px {
+    max-height: $i * 1px;
+  }
+}
+
+@for $i from 0 through 100 {
+  .h-#{$i}vh {
+    height: $i * 1vh;
+  }
+}
+
+.h-auto {
+  height: auto;
+}
+
+.text-decoration {
+  &-underline {
+    text-decoration: underline;
+  }
+
+  &-none {
+    text-decoration: none;
+  }
+}

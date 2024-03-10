@@ -1,0 +1,66 @@
+$headerHeight: 63px;
+$defaultFontFamily: "Outfit", sans-serif;
+$shadow: 0px 0px 18px -5px rgba(0, 0, 0, 0.22);
+
+$breakpoints: (
+  320: 320px,
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px,
+  lg13: 1300px,
+  xl: 1366px,
+  xxl: 1500px,
+  xxl16: 1600px,
+  hd: 1920px,
+  portrait: 1,
+  landscape: 2,
+);
+
+@mixin respond-above($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+@mixin respond-below($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    @media (max-width: ($breakpoint-value - 1)) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+@mixin respond-height-below($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    @media (max-height: ($breakpoint-value - 1)) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+@mixin respond-ipad($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    @if $breakpoint-value == 1 {
+      @media all and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+        @content;
+      }
+    } @else {
+      @media all and (device-width: 1024px) and (device-height: 768px) and (orientation: landscape) {
+        @content;
+      }
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
